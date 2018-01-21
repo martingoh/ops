@@ -1,0 +1,65 @@
+{% extends "aisle/layout.html" %}
+{% block title %}
+
+Browse Page
+
+{% endblock %}
+
+{% block content %}
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>description</th>
+      <th>fc_code</th>
+      <th>user_id</th>
+      <th>integrity check</th>
+      <th>current_total_cost</th>
+      <th>suggested_total_cost</th>
+      <th>uploaded_at</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in inputs %}
+      <tr>
+        <td>{{ row.description }}</td>
+        <td>{{ row.fc_code }}</td>
+        <td>{{ row.user_id }}</td>
+        <td>{{ row.integrity_check }}</td>
+        <td>{{ row.current_total_cost }}</td>
+        <td>{{ row.suggested_total_cost }}</td>
+        <td>{{ row.uploaded_at }}</td>
+        <td><a href="/result/{{row.id}}" class="waves-effect waves-light btn">View</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if inputs.has_other_pages %}
+
+  <ul class="pagination">
+    {% if inputs.has_previous %}
+      <li class="waves-effect"><a href="?page={{ inputs.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+    {% else %}
+      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    {% endif %}
+    
+    {% for i in inputs.paginator.page_range %}
+      {% if inputs.number == i %}
+        <li class="active"><a href="#!">{{ i }}</a></li>
+      {% else %}
+        <li class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    
+    {% if inputs.has_next %}
+      <li class="waves-effect"><a href="?page={{ inputs.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+    {% else %}
+      <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+{% endblock %}

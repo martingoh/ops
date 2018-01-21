@@ -1,0 +1,64 @@
+{% extends "aisle/layout.html" %}
+{% block title %}
+
+Result Page
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="divider"></div>
+  <div class="section">
+    <h5>Summary</h5>
+    <p>Description : {{input_object.description}}</p>
+    <p>FC_Code : {{input_object.fc_code}}</p>
+    <p>User_ID : {{input_object.user_id}}</p>
+    <p>Uploaded_at : {{input_object.uploaded_at}}</p>
+    <p>Integrity : {{input_object.integrity_check}}</p>
+    <p>Current Total Cost : {{input_object.current_total_cost}}</p>
+    <p>Suggested Total Cost : {{input_object.suggested_total_cost}}</p>
+  </div>
+
+
+  <div class="divider"></div>
+  <div class="section">
+    <h5>Details</h5>
+  </div>
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>current_aisle</th>
+      <th>cost (rank)</th>
+      <th>current_quantity (rank)</th>
+      <th>gap</th>
+      
+      
+      
+      <th>Should be replaced by</th>
+      <th>which has quantity of</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in analyses %}
+      <tr>
+        <td>{{ row.2 }}</td>
+        <td>{{ row.1 }} ({{ row.0 }})</td>
+        <td>{{ row.5 }} ({{ row.6 }})</td>
+        <td><span class="badge {{row.8}}">{{ row.7 }}</span></td>
+
+    
+        
+        
+        <td>{{ row.3 }}</td>
+        <td>{{ row.4 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+
+{% endblock %}

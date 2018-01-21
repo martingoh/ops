@@ -29,7 +29,7 @@ SECRET_KEY = '8!8!am58cv+utxharw*ya6pwu)f#=%*$(w_7twi1ozee2pek%d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['52.79.212.115', 'www.martingoh.com']
+ALLOWED_HOSTS = ['52.79.212.115', 'www.martingoh.com','127.0.0.1']
 
 
 # Application definition
@@ -124,3 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = '/browse/'
