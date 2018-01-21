@@ -29,7 +29,7 @@ SECRET_KEY = '8!8!am58cv+utxharw*ya6pwu)f#=%*$(w_7twi1ozee2pek%d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['martingoh.com', 'www.martingoh.com']
+ALLOWED_HOSTS = ['52.79.212.115', 'www.martingoh.com']
 
 
 # Application definition
