@@ -41,7 +41,8 @@ def upload(request):
 		if form.is_valid():
 			form.save()
 			calculate(None)
-			return HttpResponse("Calc completed!")
+			lastfile = Input.objects.order_by('id').last()
+			return redirect('/result/{}'.format(lastfile.id))
 	else:
 		form = DocumentForm()
 	
