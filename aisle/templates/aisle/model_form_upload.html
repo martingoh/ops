@@ -1,0 +1,16 @@
+{% block content %}
+
+<h1>Upload file here</h1>
+
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+
+  <p><a href="/">Return to home</a></p>
+
+  <p><a href="/viewresult">View last one</a></p>
+
+{% endblock %}
