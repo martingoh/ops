@@ -27,3 +27,4 @@ class Output_asis(models.Model):
 	quantity_rank = models.IntegerField()
 	#등수아일, 코스트 : 현재 아일, 현재 퀀티티, 토탈 코스트 / 바뀐 아일, 바뀐 퀀티티, 바뀐 토탈 코스트  
 	#
+	#
