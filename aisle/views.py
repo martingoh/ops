@@ -48,6 +48,8 @@ def upload(request):
 	
 	return render(request, 'aisle/model_form_upload.html', {'form': form})
 
+	
+
 
 def calculate(request):
 
